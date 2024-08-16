@@ -29,6 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('winners', JSON.stringify(winners));
     }
 
+    // Generate a random duration between min and max in seconds
+    function getRandomDuration(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min) * 1000; // Convert to milliseconds
+    }
+
     // Start the raffle animation
     function startRaffleAnimation() {
         if (names.length === 0) {
@@ -36,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const animationDuration = 10000; // 10 seconds
+        const animationDuration = getRandomDuration(8, 16); // Random duration between 8 and 16 seconds
         const baseDelay = 70; // Constant delay in milliseconds
         const maxDelay = 300; // Maximum delay in milliseconds at the end
 
@@ -119,11 +124,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to trigger confetti animation
     function triggerConfetti() {
-        confetti({
-            particleCount: 100,
-            spread: 70,
-            origin: { y: 0.6 }
-        });
+        if (typeof confetti === 'function') {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
     }
 
     raffleButton.addEventListener('click', startRaffleAnimation);
