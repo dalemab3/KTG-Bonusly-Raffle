@@ -1,0 +1,113 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 600px;
+}
+
+.raffle-section {
+    background: #e0f7fa;
+    border: 2px solid #00bcd4;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+
+button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+#resultLabel {
+    font-size: 28px;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #00796b;
+}
+
+#namesList {
+    text-align: left;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 0;
+    list-style-type: none;
+}
+
+#namesList p {
+    margin: 0;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid #b2dfdb;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease; /* Smooth transition for background color */
+}
+
+#winnersList {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#winnersList p {
+    margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+
+    .raffle-section {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    #resultLabel {
+        font-size: 24px;
+    }
+}
+
+.name-item {
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.name-item.highlight {
+    color: red; /* Highlight color */
+}
+
